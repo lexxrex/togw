@@ -1,3 +1,4 @@
+<!-- eslint-disable camelcase -->
 <script setup>
 const supabase = useSupabaseClient()
 
@@ -9,9 +10,9 @@ const avatar_path = ref('')
 loading.value = true
 const user = useSupabaseUser()
 
-let { data } = await supabase
+const { data } = await supabase
   .from('profiles')
-  .select(`username, website, avatar_url`)
+  .select('username, website, avatar_url')
   .eq('id', user.value.id)
   .single()
 
@@ -23,7 +24,7 @@ if (data) {
 
 loading.value = false
 
-async function updateProfile() {
+async function updateProfile () {
   try {
     loading.value = true
     const user = useSupabaseUser()
@@ -33,14 +34,14 @@ async function updateProfile() {
       username: username.value,
       website: website.value,
       avatar_url: avatar_path.value,
-      updated_at: new Date(),
+      updated_at: new Date()
     }
 
-    let { error } = await supabase.from('profiles').upsert(updates, {
-      returning: 'minimal', // Don't return the value after inserting
+    const { error } = await supabase.from('profiles').upsert(updates, {
+      returning: 'minimal' // Don't return the value after inserting
     })
 
-    if (error) throw error
+    if (error) { throw error }
   } catch (error) {
     alert(error.message)
   } finally {
@@ -48,11 +49,11 @@ async function updateProfile() {
   }
 }
 
-async function signOut() {
+async function signOut () {
   try {
     loading.value = true
-    let { error } = await supabase.auth.signOut()
-    if (error) throw error
+    const { error } = await supabase.auth.signOut()
+    if (error) { throw error }
   } catch (error) {
     alert(error.message)
   } finally {
@@ -66,15 +67,15 @@ async function signOut() {
     <Avatar v-model:path="avatar_path" @upload="updateProfile" />
     <div>
       <label for="email">Email</label>
-      <input id="email" type="text" :value="user.email" disabled />
+      <input id="email" type="text" :value="user.email" disabled>
     </div>
     <div>
       <label for="username">Name</label>
-      <input id="username" type="text" v-model="username" />
+      <input id="username" v-model="username" type="text">
     </div>
     <div>
       <label for="website">Website</label>
-      <input id="website" type="url" v-model="website" />
+      <input id="website" v-model="website" type="url">
     </div>
 
     <div>
@@ -83,11 +84,13 @@ async function signOut() {
         class="button primary block"
         :value="loading ? 'Loading ...' : 'Update'"
         :disabled="loading"
-      />
+      >
     </div>
 
     <div>
-      <button class="button block" @click="signOut" :disabled="loading">Sign Out</button>
+      <button class="button block" :disabled="loading" @click="signOut">
+        Sign Out
+      </button>
     </div>
   </form>
 </template>

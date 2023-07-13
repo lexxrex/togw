@@ -15,7 +15,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: var(--custom-font-family);
-    background-color: var(--custom-bg-color);
+    /* background-color: var(--custom-bg-color); */
 }
 
 * {
