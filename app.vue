@@ -6,3 +6,9 @@
     </PageContainer>
   </AppContainer>
 </template>
+
+<style lang="postcss">
+body {
+  @apply bg-white dark:bg-black;
+}
+</style>

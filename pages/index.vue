@@ -10,13 +10,13 @@
         <li v-for="profile in profiles" :key="profile['id']">
           <Avatar :path="profile['avatar_url']"/>
           {{ profile['username'] }} <br> {{ profile['website'] }}
-          <!-- <UAvatar :src="'https://umjsqfwlhbsyfaqlyanw.supabase.co/storage/v1/object/sign/avatars/' + " alt="Avatar" size="xl" /> -->
         </li>
       </ul>
       <p v-else>
         Loading...
       </p>
       {{ profiles }}
+      <UIcon name="i-heroicons-bars-3" class="text-2xl text-red" />
     </div>
   </UContainer>
 
