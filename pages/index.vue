@@ -2,7 +2,7 @@
   <UContainer>
     <ColorModeButton />
     <div class="m-4">
-      <p class="text-2xl font-bold text-black dark:text-white">
+      <p class="text-2xl font-bold">
         Home
       </p>
       <!-- <p v-if="profiles">{{ profiles  }}</p> -->
@@ -16,7 +16,7 @@
         Loading...
       </p>
       {{ profiles }}
-      <UIcon name="i-heroicons-bars-3" class="text-2xl text-red" />
+      <UIcon name="i-heroicons-bars-3" class="text-2xl bg-clr" />
     </div>
   </UContainer>
 

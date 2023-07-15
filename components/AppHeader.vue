@@ -16,40 +16,53 @@ const logout = async () => {
 </script>
 
 <template>
-  <div>
-    <Title>Nuxt 3 x Supabase</Title>
-    <div class="flex items-center md:justify-between justify-center">
-      <div class="hidden md:block">
-        <button
-          label="Source"
-          variant="transparent"
-          target="_blank"
-          to="https://github.com/nuxt-modules/supabase/tree/main/demo"
-          icon="i-heroicons-outline-external-link"
-        />
-        <button
-          label="Hosted on Netlify"
-          variant="transparent"
-          target="_blank"
-          to="https://netlify.com"
-          icon="i-heroicons-outline-external-link"
-        />
+    <header class="bg-">
+    <!-- <AppContainer> -->
+      <div class="section left">
+        <!-- <AppHeaderDialog v-if="hasDialog" /> -->
+        <!-- <AppHeaderLogo /> -->
       </div>
-      <div class="flex items-center">
-        <!-- <UButton
-          variant="transparent"
-          :icon="colorModeIcon"
-          @click="toggleDark"
-        /> -->
+
+      <div class="section center">
+        <!-- <AppHeaderLogo v-if="hasDialog" /> -->
+        <!-- <AppHeaderNavigation /> -->
+      </div>
+
+      <div class="section right">
         <button
           v-if="user"
           class="u-text-white"
           variant="transparent"
           @click="logout"
-        >
+          >
           Logout
         </button>
+        <!-- <AppSearch /> -->
+        <!-- <ThemeSelect /> -->
+        <div class="social-icons">
+          <!-- <AppSocialIcons /> -->
+        </div>
       </div>
-    </div>
-  </div>
+      <!-- Insert -->
+      <Title>Nuxt 3 x Supabase</Title>
+      <div class="flex items-center md:justify-between justify-center">
+        <div class="hidden md:block">
+          <button
+          label="Source"
+          variant="transparent"
+          target="_blank"
+          to="https://github.com/nuxt-modules/supabase/tree/main/demo"
+          icon="i-heroicons-outline-external-link"
+          />
+          <button
+          label="Hosted on Netlify"
+          variant="transparent"
+          target="_blank"
+          to="https://netlify.com"
+          icon="i-heroicons-outline-external-link"
+          />
+        </div>
+      </div>
+    <!-- </AppContainer> -->
+  </header>
 </template>

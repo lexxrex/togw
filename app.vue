@@ -9,6 +9,6 @@
 
 <style lang="postcss">
 body {
-  @apply bg-white dark:bg-black;
+  @apply bg-white dark:bg-zinc-950;
 }
 </style>

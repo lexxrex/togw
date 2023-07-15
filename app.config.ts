@@ -1,15 +1,16 @@
 export default defineAppConfig({
   ui: {
-    primary: 'slate',
-    gray: 'cool',
+    primary: 'brand',
+    gray: 'zinc',
     button: {
       variant: {
-        ghost: 'text-{color}-500 dark:text-{color}-400 hover:bg-{color}-100 disabled:bg-transparent dark:hover:bg-{color}-900 dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400'
+        // ghost: 'text-{color}-500 dark:text-{color}-400 hover:bg-{color}-50 dark:hover:bg-{color}-900 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400'
+        ghost: 'text-{color}-600 dark:text-{color}-500 hover:bg-{color}-50 dark:hover:bg-{color}-950 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400'
       },
       default: {
         size: 'sm',
-        variant: 'solid',
-        color: 'primary',
+        variant: 'ghost',
+        // color: 'gray',
         loadingIcon: 'i-heroicons-arrow-path-20-solid'
       }
     }
