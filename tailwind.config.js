@@ -29,6 +29,13 @@ module.exports = {
         }
       }
     },
+    fontFamily: {
+      'sans': ['Assistant', 'system-ui'],
+      'serif': ['ui-serif', 'Georgia'],
+      'mono': ['ui-monospace', 'SFMono-Regular'],
+      'display': ['Oswald'],
+      'body': ['"Open Sans"'],
+    }
   },
   plugins: [],
 }

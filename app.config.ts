@@ -1,11 +1,18 @@
 export default defineAppConfig({
+  logomark: 'TOGW-logomark-wht.jpg',
+  avatarsBaseUrl: 'https://umjsqfwlhbsyfaqlyanw.supabase.co/storage/v1/object/sign/avatars/',
   ui: {
+    // primary: 'emerald',
     primary: 'brand',
     gray: 'zinc',
+    avatar: {
+      background: 'bg-gray-200 dark:bg-gray-900',
+    },
     button: {
       variant: {
         // ghost: 'text-{color}-500 dark:text-{color}-400 hover:bg-{color}-50 dark:hover:bg-{color}-900 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400'
-        ghost: 'text-{color}-600 dark:text-{color}-500 hover:bg-{color}-50 dark:hover:bg-{color}-950 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400'
+        solid: 'shadow-sm text-white dark:text-gray-900 bg-{color}-500 hover:bg-{color}-400 disabled:bg-{color}-500 dark:bg-{color}-600 dark:hover:bg-{color}-500 dark:disabled:bg-{color}-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-{color}-500 dark:focus-visible:outline-{color}-400',
+        ghost: 'text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-900 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400',
       },
       default: {
         size: 'sm',

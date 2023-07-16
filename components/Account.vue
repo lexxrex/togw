@@ -63,19 +63,21 @@ async function signOut () {
 </script>
 
 <template>
+  <h1 class="text-2xl font-black">העבודה הגדולה האחת</h1>
   <form class="form-widget" @submit.prevent="updateProfile">
     <Avatar v-model:path="avatar_path" @upload="updateProfile" />
     <div>
       <label for="email">Email</label>
-      <input id="email" type="text" :value="user.email" disabled>
+      <!-- <input id="email" type="text" :value="user.email" disabled> -->
+      <UInput v-model="user.email" disabled />
     </div>
     <div>
       <label for="username">Name</label>
-      <input id="username" v-model="username" type="text">
+      <UInput v-model="username" disabled />
     </div>
     <div>
       <label for="website">Website</label>
-      <input id="website" v-model="website" type="url">
+      <UInput id="website" v-model="website" type="url" />
     </div>
 
     <div>
@@ -93,4 +95,6 @@ async function signOut () {
       </button>
     </div>
   </form>
+
+
 </template>

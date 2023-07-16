@@ -19,25 +19,44 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <form class="row flex-center flex" @submit.prevent="handleLogin">
-    <div class="col-6 form-widget">
-      <h1 class="header">
-        Supabase + Nuxt 3
+  <form class="flex items-center justify-center" @submit.prevent="handleLogin">
+    <UContainer class="max-w-md">
+      <!-- <h1 class="text-2xl font-black">
+        The One Great Work
+      </h1> -->
+      <h1 class="text-2xl font-black">
+        העבודה הגדולה האחת
       </h1>
-      <p class="description">
-        Sign in via magic link with your email below
+      <!-- <p class="my-4 text-sm font-semibold">
+        Sign in via magic link with your email below. <br />
+        No password required.
+      </p> -->
+      <p class="my-4 text-sm font-medium">
+        היכנס/י באמצעות קישור פלא עם הדוא"ל שלך למטה.<br />
+        אין צורך בסיסמה
       </p>
       <div>
-        <input v-model="email" class="inputField" type="email" placeholder="Your email">
+        <!-- <UFormGroup name="email" label="Email"> -->
+          <UInput
+            v-model="email"
+            type="email"
+            placeholder='הדוא"ל שלך'
+            size="xl"
+          />
+        <!-- </UFormGroup> -->
       </div>
       <div>
-        <input
-          type="submit"
-          class="button block"
-          :value="loading ? 'Loading' : 'Send magic link'"
+        <UButton
+          :label="loading ? 'טוען' : 'שלח קישור פלא'"
           :disabled="loading"
-        >
+          type="submit"
+          variant="solid"
+          class="my-4 text-white dark:text-white font-semibold"
+          color="primary"
+          size="xl"
+          block
+        />
       </div>
-    </div>
+    </UContainer>
   </form>
 </template>

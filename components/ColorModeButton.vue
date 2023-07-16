@@ -9,6 +9,9 @@ const isDark = computed({
     colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
   }
 })
+
+console.log(isDark)
+
 </script>
 
 <template>
