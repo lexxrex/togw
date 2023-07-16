@@ -21,6 +21,8 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Assistant: [500, 700, 800],
+      // Fredoka: [400, 500],
+      // 'Miriam Libre': [400]
       // 'Josefin+Sans': true,
       // Lato: [100, 300],
       // Raleway: {

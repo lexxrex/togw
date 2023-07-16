@@ -2,26 +2,49 @@ export default defineAppConfig({
   logomark: 'TOGW-logomark-wht.jpg',
   avatarsBaseUrl: 'https://umjsqfwlhbsyfaqlyanw.supabase.co/storage/v1/object/sign/avatars/',
   ui: {
-    // primary: 'emerald',
+    // primary: 'green',
     primary: 'brand',
     gray: 'zinc',
     avatar: {
-      background: 'bg-gray-200 dark:bg-gray-900',
+      background: 'bg-gray-200 dark:bg-gray-800',
     },
     button: {
+      "icon": {
+        "base": "flex-shrink-0",
+        "size": {
+          "2xl": "h-7 w-7",
+          "3xl": "h-8 w-8"
+        }
+      },
       variant: {
         // ghost: 'text-{color}-500 dark:text-{color}-400 hover:bg-{color}-50 dark:hover:bg-{color}-900 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400'
         solid: 'shadow-sm text-white dark:text-gray-900 bg-{color}-500 hover:bg-{color}-400 disabled:bg-{color}-500 dark:bg-{color}-600 dark:hover:bg-{color}-500 dark:disabled:bg-{color}-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-{color}-500 dark:focus-visible:outline-{color}-400',
         ghost: 'text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-900 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400',
+        // outline: 'ring-2 ring-inset ring-current text-{color}-500 dark:text-{color}-400 hover:bg-{color}-50 disabled:bg-transparent dark:hover:bg-{color}-950 dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400',
+      },
+      padding: {
+        "2xl": 'px-3.5 py-2.5',
+        "3xl": 'px-4.5 py-3.5'
+      },
+      square: {
+        "2xl": 'p-2.5',
+        "3xl": 'p-3'
       },
       default: {
         size: 'sm',
         variant: 'ghost',
         // color: 'gray',
         loadingIcon: 'i-heroicons-arrow-path-20-solid'
+      },
+    },
+    modal: {
+      width: 'sm:w-auto',
+      background: 'bg-white dark:bg-zinc-950',
+      overlay: {
+        background: 'bg-gray-100/75 dark:bg-black/75'
       }
     }
-  }
+  },
 })
 
 

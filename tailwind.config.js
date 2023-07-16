@@ -35,6 +35,7 @@ module.exports = {
       'mono': ['ui-monospace', 'SFMono-Regular'],
       'display': ['Oswald'],
       'body': ['"Open Sans"'],
+      // 'body': ['"Miriam Libre"'],
     }
   },
   plugins: [],

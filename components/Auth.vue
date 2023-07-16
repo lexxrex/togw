@@ -20,19 +20,19 @@ const handleLogin = async () => {
 
 <template>
   <form class="flex items-center justify-center" @submit.prevent="handleLogin">
-    <UContainer class="max-w-md">
+    <UContainer class="max-w-xl text-center">
       <!-- <h1 class="text-2xl font-black">
         The One Great Work
       </h1> -->
-      <h1 class="text-2xl font-black">
+      <h1 class="text-4xl font-black">
         העבודה הגדולה האחת
       </h1>
       <!-- <p class="my-4 text-sm font-semibold">
         Sign in via magic link with your email below. <br />
         No password required.
       </p> -->
-      <p class="my-4 text-sm font-medium">
-        היכנס/י באמצעות קישור פלא עם הדוא"ל שלך למטה.<br />
+      <p class="my-4 text-lg text-zinc-800 dark:text-zinc-300">
+        היכנס/י באמצעות <b>קישור פלא</b> עם הדוא"ל שלך למטה.<br />
         אין צורך בסיסמה
       </p>
       <div>
