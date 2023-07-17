@@ -2,16 +2,15 @@
 const appConfig = useAppConfig()
 const client = useSupabaseAuthClient()
 const user = useSupabaseUser()
+const supabase = useSupabaseClient()
+const loading = ref(false)
+const email = ref('')
+const isOpen = ref(false)
 
 const logout = async () => {
   await client.auth.signOut()
   navigateTo('/')
 }
-
-const supabase = useSupabaseClient()
-
-const loading = ref(false)
-const email = ref('')
 
 const handleLogin = async () => {
   try {
@@ -20,28 +19,11 @@ const handleLogin = async () => {
     if (error) { throw error }
     alert('Check your email for the login link!')
   } catch (error) {
-    alert(error.error_description || error.message)
+    alert(error)
   } finally {
     loading.value = false
   }
 }
-
-const isOpen = ref(false)
-// const colorMode = useColorMode()
-
-// const toggleDark = () => {
-//   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-// }
-
-// const colorModeIcon = computed(() => colorMode.preference === 'dark' ? 'i-heroicons-outline-moon' : 'i-heroicons-outline-sun')
-
-// const db = useSupabaseClient()
-// const baseUrl = 'https://umjsqfwlhbsyfaqlyanw.supabase.co/storage/v1/object/sign/avatars/'
-
-// const { data: profiles } = await useAsyncData('profiles', async () => {
-//   const { data } = await db.from('profiles').select('*')
-//   return data
-// })
 
 </script>
 
@@ -51,87 +33,124 @@ const isOpen = ref(false)
       <!-- Head 1/3 -->
       <ClientOnly>
         <div class="flex flex-1 space-x-4 flex-row items-center justify-start">
-          <UAvatar alt="לקס רקס" size="sm" chip-color="green" />
-          <!-- <UButton
-            :icon="'i-heroicons-cog-6-tooth'"
-            aria-label="Theme"
-          /> -->
+          <NuxtLink to="/profile">
+            <UAvatar alt="לקס רקס" size="sm" chip-color="primary" />
+          </NuxtLink>
         </div>
       </ClientOnly>
       <!-- Head 2/3 -->
       <div class="flex-1 flex flex-row items-center justify-center">
-        <UButton
+        <UTooltip text="העבודה הגדולה האחת">
+          <NuxtLink to="/" class="flex items-center justify-center rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-900 w-12 h-12 my-1">
+            <UIcon name="i-heroicons-scale" class="text-3xl" />
+          </NuxtLink>
+        </UTooltip>
+        <!-- <UButton
           :icon="'i-heroicons-scale'"
           to="/"
+          variant="shadow"
           size="3xl"
           aria-label="Theme"
-        />
-        <!-- <NuxtLink to="/">
-          <img :src="appConfig.logomark" alt="logo" class="w-12 h-12 rounded-full"/>
-        </NuxtLink> -->
+        /> -->
       </div>
       <!-- Head 3/3 -->
       <div class="flex flex-1 flex-row items-center justify-end">
-        <UButton
-          :icon="'i-heroicons-bolt-solid'"
-          to="/"
-          aria-label="Theme"
-        />
-        <ColorModeButton class="flex"/>
-        <UButton
-          v-if="user"
-          label="יציאה"
-          class="font-semibold"
-          color="white"
-          variant="outline"
-          @click="logout"
-          />
-          <div v-else>
-            <UButton
-              label="כניסה"
-              class="font-medium mx-2"
-              color="white"
-              variant="link"
-              @click="isOpen = true"
-              />
+        <UTooltip text="מצב צבע">
+          <ColorModeButton class="flex"/>
+        </UTooltip>
 
+        <UButton
+        :icon="'i-heroicons-bolt-solid'"
+        to="/profiles"
+        class="mx-2"
+        aria-label="Theme"
+        />
+        
+        <div v-if="user">
+          <UButton
+            label="יציאה"
+            class="mx-2"
+            color="white"
+            variant="link"
+            @click="isOpen = true"
+          />
+          <UModal v-model="isOpen">
+              <form class="flex items-center justify-center" @submit.prevent="handleLogin">
+                <UContainer class="text-center py-4">
+                  <h1 class="text-2xl font-black text-zinc-900 dark:text-zinc-200 py-2">
+                    העבודה הגדולה האחת
+                  </h1>
+
+                  <hr class="my-3 border-l-zinc-100 dark:border-zinc-900"/>
+                  
+                  <p class="my-6 text-md text-zinc-800 dark:text-zinc-300">
+                    אנא אשר/י יציאה
+                  </p>
+
+                  <div>
+                    <UButton
+                    :label="loading ? 'טוען' : 'אישור יציאה'"
+                    :disabled="loading"
+                    variant="solid"
+                    class="mt-4 text-white dark:text-white font-semibold"
+                    color="primary"
+                    size="xl"
+                    block
+                    @click="logout"
+                  />
+                  <span class="text-xs text-gray-400 dark:text-gray-700 block mt-2">להתראות בקרוב</span>
+                </div>
+              </UContainer>
+            </form>
+          </UModal>
+        </div>
+        <div v-else>
+          <UButton
+            label="כניסה"
+            class="mx-2"
+            color="white"
+            variant="link"
+            @click="isOpen = true"
+            />
+            
             <UModal v-model="isOpen">
               <form class="flex items-center justify-center" @submit.prevent="handleLogin">
                 <UContainer class="text-center py-4">
                   <h1 class="text-2xl font-black text-zinc-900 dark:text-zinc-200 py-2">
                     העבודה הגדולה האחת
                   </h1>
+
                   <hr class="my-3 border-l-zinc-100 dark:border-zinc-900"/>
+                  
                   <p class="my-6 text-md text-zinc-800 dark:text-zinc-300">
                     היכנס/י באמצעות קישור פלא עם הדוא"ל שלך
                   </p>
+
                   <div>
-                    <!-- <UFormGroup name="email" label="Email"> -->
-                      <UInput
-                        v-model="email"
-                        type="email"
-                        placeholder='הדוא"ל שלך'
-                        size="md"
-                      />
-                    <!-- </UFormGroup> -->
+                    <UInput
+                    v-model="email"
+                    type="email"
+                    placeholder='הדוא"ל שלך'
+                    size="md"
+                  />
                   </div>
                   <div>
                     <UButton
-                      :label="loading ? 'טוען' : 'שלח קישור פלא'"
-                      :disabled="loading"
-                      type="submit"
-                      variant="solid"
-                      class="mt-4 text-white dark:text-white font-semibold"
-                      color="primary"
-                      size="xl"
-                      block
-                    />
-                    <span class="text-xs text-gray-400 dark:text-gray-700 block mt-2"> אין צורך בסיסמה</span>
-                  </div>
-                </UContainer>
-              </form>
-            </UModal>
-          </div>
+                    :label="loading ? 'טוען' : 'שלח קישור פלא'"
+                    :disabled="loading"
+                    type="submit"
+                    variant="solid"
+                    class="mt-4 text-white dark:text-white font-semibold"
+                    color="primary"
+                    size="xl"
+                    block
+                  />
+                  <span class="text-xs text-gray-400 dark:text-gray-700 block mt-2"> אין צורך בסיסמה</span>
+                </div>
+              </UContainer>
+            </form>
+          </UModal>
+        </div>
       </div>
     </div>
   </header>

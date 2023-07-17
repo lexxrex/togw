@@ -3,10 +3,17 @@ export default defineAppConfig({
   avatarsBaseUrl: 'https://umjsqfwlhbsyfaqlyanw.supabase.co/storage/v1/object/sign/avatars/',
   ui: {
     // primary: 'green',
-    primary: 'brand',
+    primary: 'main',
     gray: 'zinc',
     avatar: {
       background: 'bg-gray-200 dark:bg-gray-800',
+      placeholder: 'font-semibold',
+    },
+    badge: {
+      variant: {
+        // solid: 'bg-{color}-50 dark:bg-{color}-400 dark:bg-opacity-10 text-{color}-500 dark:text-{color}-400 ring-1 ring-inset ring-{color}-500 dark:ring-{color}-400 ring-opacity-10 dark:ring-opacity-20'
+        theme: 'dark:bg-{color}-400 dark:bg-opacity-80 bg-{color}-400 text-zinc-800 dark:text-zinc-800 ring-0'
+      },
     },
     button: {
       "icon": {
@@ -18,7 +25,7 @@ export default defineAppConfig({
       },
       variant: {
         // ghost: 'text-{color}-500 dark:text-{color}-400 hover:bg-{color}-50 dark:hover:bg-{color}-900 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400'
-        solid: 'shadow-sm text-white dark:text-gray-900 bg-{color}-500 hover:bg-{color}-400 disabled:bg-{color}-500 dark:bg-{color}-600 dark:hover:bg-{color}-500 dark:disabled:bg-{color}-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-{color}-500 dark:focus-visible:outline-{color}-400',
+        solid: 'shadow-sm text-zinc-700 dark:text-zinc-700 hover:text-zinc-800 dark:hover:text-zinc-800 bg-{color}-600 hover:bg-{color}-500 disabled:bg-{color}-500 dark:bg-{color}-600 dark:hover:bg-{color}-500 dark:disabled:bg-{color}-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-{color}-500 dark:focus-visible:outline-{color}-500',
         ghost: 'text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-900 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400',
         // outline: 'ring-2 ring-inset ring-current text-{color}-500 dark:text-{color}-400 hover:bg-{color}-50 disabled:bg-transparent dark:hover:bg-{color}-950 dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400',
       },
@@ -43,6 +50,10 @@ export default defineAppConfig({
       overlay: {
         background: 'bg-gray-100/75 dark:bg-black/75'
       }
+    },
+    tooltip: {
+      background: 'bg-primary-500 dark:bg-primary-500',
+      color: 'text-gray-900 dark:gray-900',
     }
   },
 })

@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     // https://content.nuxtjs.org
   ],
   ui: {
-    safelistColors: ['hover:bg-zinc-200']
+    // safelistColors: ['hover:bg-zinc-200']
   },
   googleFonts: {
     families: {

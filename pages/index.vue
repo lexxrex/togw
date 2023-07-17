@@ -1,5 +1,6 @@
 <template>
   <UContainer>
+  {{ profiles }}
     <!-- <ColorModeButton /> -->
     <!-- <div class="m-4"> -->
       <!-- <p class="text-2xl font-bold">
