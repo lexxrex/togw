@@ -1,25 +1,12 @@
 <template>
   <div class="container mx-auto pt-20">
-  {{ profiles }}
-    <!-- <ColorModeButton /> -->
-    <!-- <div class="m-4"> -->
-      <!-- <p class="text-2xl font-bold">
-        Home
-      </p> -->
-      <!-- <p v-if="profiles">{{ profiles  }}</p>
-      <ul v-if="profiles">
-        <li v-for="profile in profiles" :key="profile['id']">
-          <Avatar :path="profile['avatar_url']"/>
-          {{ profile['username'] }} <br> {{ profile['website'] }}
-        </li>
-      </ul>
-      <p v-else>
-        Loading...
-      </p> -->
-      <!-- {{ profiles }} -->
-      <!-- <UIcon name="i-heroicons-bars-3" class="text-2xl bg-clr" /> -->
-    <!-- </div> -->
-    </div>
+    <h1 class="flex flex-row justify-center min-h-screen font-extrabold text-8xl mt-24">
+      העבודה הגדולה האחת
+      <!-- <span class="text-[12rem]">העבודה</span>
+      <span class="text-[32rem]">הגדולה</span>
+      <span class="text-[16rem]">האחת</span>  -->
+    </h1>
+  </div>
 
 </template>
 

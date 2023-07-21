@@ -62,7 +62,7 @@ const handleLogin = async () => {
         <UButton
         :icon="'i-heroicons-bolt-solid'"
         to="/profiles"
-        class="mx-2"
+        class="mr-2"
         aria-label="Theme"
         />
         
