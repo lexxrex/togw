@@ -1,19 +1,18 @@
 <!-- eslint-disable camelcase -->
 <script setup>
 const supabase = useSupabaseClient()
-const user = useSupabaseUser()
 
 const loading = ref(true)
 const username = ref('')
 const website = ref('')
 const avatar_path = ref('')
-const fullname = ref('')
 
 loading.value = true
+const user = useSupabaseUser()
 
 const { data } = await supabase
   .from('profiles')
-  .select('username, website, avatar_url, full_name')
+  .select('username, website, avatar_url')
   .eq('id', user.value.id)
   .single()
 
@@ -21,7 +20,6 @@ if (data) {
   username.value = data.username
   website.value = data.website
   avatar_path.value = data.avatar_url
-  fullname.value = data.full_name
 }
 
 loading.value = false
@@ -65,23 +63,38 @@ async function signOut () {
 </script>
 
 <template>
-  <div>
-
-    <Avatar :path="avatar_path" />
-    <h1 class="text-xl font-bold">{{ fullname }}</h1>
-
-    <div class="">
-      {{ '@' + username }}
+  <h1 class="text-2xl font-black">העבודה הגדולה האחת</h1>
+  <form class="form-widget" @submit.prevent="updateProfile">
+    <Avatar v-model:path="avatar_path" @upload="updateProfile" />
+    <div>
+      <label for="email">Email</label>
+      <!-- <input id="email" type="text" :value="user.email" disabled> -->
+      <UInput v-model="user.email" />
+    </div>
+    <div>
+      <label for="username">Name</label>
+      <UInput v-model="username" />
+    </div>
+    <div>
+      <label for="website">Website</label>
+      <UInput id="website" v-model="website" type="url" />
     </div>
 
     <div>
-      {{ user.email }}
+      <input
+        type="submit"
+        class="button primary block"
+        :value="loading ? 'Loading ...' : 'Update'"
+        :disabled="loading"
+      >
     </div>
 
-    <NuxtLink :to="website" target="_blank">
-      <UBadge variant="theme" size="xs" :label="website" />
-      </NuxtLink>
+    <div>
+      <button class="button block" :disabled="loading" @click="signOut">
+        Sign Out
+      </button>
+    </div>
+  </form>
 
-  </div>
 
 </template>

@@ -24,25 +24,23 @@ const handleLogin = async () => {
       <!-- <h1 class="text-2xl font-black">
         The One Great Work
       </h1> -->
-      <h1 class="text-4xl font-black">
-        העבודה הגדולה האחת
+      <h1 class="text-3xl font-black">
+        <!-- העבודה הגדולה האחת -->
+        ההרשמה הגדולה האחת
       </h1>
-      <!-- <p class="my-4 text-sm font-semibold">
-        Sign in via magic link with your email below. <br />
-        No password required.
-      </p> -->
-      <p class="my-4 text-lg text-zinc-800 dark:text-zinc-300">
-        היכנס/י באמצעות <b>קישור פלא</b> עם הדוא"ל שלך למטה.<br />
-        אין צורך בסיסמה
+
+      <hr class="mb-4 mt-6 border-l-gray-100 dark:border-gray-900">
+
+      <p class="my-4 text-lg text-gray-800 dark:text-gray-300">
+        כניסה באמצעות <b>קישור פלא</b> עם הדוא"ל שלך
       </p>
       <div>
-        <!-- <UFormGroup name="email" label="Email"> -->
-          <UInput
-            v-model="email"
-            type="email"
-            placeholder='הדוא"ל שלך'
-            size="xl"
-          />
+        <UInput
+          v-model="email"
+          type="email"
+          placeholder="הדוא&quot;ל שלך"
+          size="lg"
+        />
         <!-- </UFormGroup> -->
       </div>
       <div>
@@ -51,12 +49,13 @@ const handleLogin = async () => {
           :disabled="loading"
           type="submit"
           variant="solid"
-          class="my-4 text-white dark:text-white font-semibold"
+          class="mt-2"
           color="primary"
           size="xl"
           block
         />
       </div>
+      <span class="text-xs text-gray-400 dark:text-gray-700 block mt-2"> אין צורך בסיסמה</span>
     </UContainer>
   </form>
 </template>

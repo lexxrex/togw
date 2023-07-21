@@ -1,5 +1,5 @@
 <template>
-  <UContainer>
+  <div class="container mx-auto pt-20">
   {{ profiles }}
     <!-- <ColorModeButton /> -->
     <!-- <div class="m-4"> -->
@@ -19,7 +19,7 @@
       <!-- {{ profiles }} -->
       <!-- <UIcon name="i-heroicons-bars-3" class="text-2xl bg-clr" /> -->
     <!-- </div> -->
-  </UContainer>
+    </div>
 
 </template>
 

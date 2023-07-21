@@ -2,6 +2,10 @@
   <AppContainer>
     <AppHeader />
     <PageContainer>
+      <NuxtLoadingIndicator
+        color="#47ffd4"
+        height="3"
+      />
       <NuxtPage />
     </PageContainer>
   </AppContainer>

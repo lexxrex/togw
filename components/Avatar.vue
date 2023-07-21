@@ -1,6 +1,6 @@
 <script setup>
 // eslint-disable-next-line vue/require-prop-types
-const props = defineProps(['path'])
+const props = defineProps(['path', 'showUpload'])
 const { path } = toRefs(props)
 const { alt } = toRefs(props)
 
@@ -60,11 +60,14 @@ watch(path, () => {
 
 <template>
   <div>
-    <UAvatar v-if="src" :src="src" size="2xl"
+    <UAvatar
+      v-if="src"
+      :src="src"
+      size="2xl"
     />
     <UAvatar v-else :alt="alt" size="2xl" />
 
-    <div style="width: 10em; position: relative;">
+    <div v-if="upload" style="width: 10em; position: relative;">
       <label class="button primary block" for="single">
         {{ uploading ? 'Uploading ...' : 'Upload' }}
       </label>

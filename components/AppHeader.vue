@@ -28,7 +28,7 @@ const handleLogin = async () => {
 </script>
 
 <template>
-    <header class="fixed top-0 left-0 right-0 py-2 border-b backdrop-filter backdrop-blur-[16px] bg-white/70 dark:bg-zinc-950/70 border-zinc-200 dark:border-zinc-900/70">
+  <header class="fixed top-0 left-0 right-0 py-2 z-10 border-b backdrop-filter backdrop-blur-[16px] bg-white/70 dark:bg-gray-950/70 border-gray-200 dark:border-gray-900/70">
     <div class="container flex mx-auto flex-row items-center px-2">
       <!-- Head 1/3 -->
       <ClientOnly>
@@ -66,10 +66,10 @@ const handleLogin = async () => {
         aria-label="Theme"
         />
         
-        <div v-if="user">
+        <!-- <div v-if="user">
           <UButton
             label="יציאה"
-            class="mx-2"
+            class="mx-2 font-thin"
             color="white"
             variant="link"
             @click="isOpen = true"
@@ -103,11 +103,11 @@ const handleLogin = async () => {
               </UContainer>
             </form>
           </UModal>
-        </div>
-        <div v-else>
+        </div> -->
+        <div v-if="!user">
           <UButton
             label="כניסה"
-            class="mx-2"
+            class="mx-2 font-thin"
             color="white"
             variant="link"
             @click="isOpen = true"
