@@ -19,6 +19,7 @@ console.log(isDark)
     <UButton
       :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
       aria-label="Theme"
+      size="2xl"
       @click="isDark = !isDark"
     />
 

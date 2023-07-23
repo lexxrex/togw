@@ -12,6 +12,9 @@
 </template>
 
 <style lang="postcss">
+html {
+  @apply scroll-smooth;
+}
 body {
   @apply bg-white dark:bg-zinc-950;
 }

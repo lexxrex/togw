@@ -28,23 +28,32 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 right-0 py-2 z-10 border-b backdrop-filter backdrop-blur-[16px] bg-white/70 dark:bg-gray-950/70 border-gray-200 dark:border-gray-900/70">
+  <header class="fixed top-0 left-0 right-0 py-2 z-10 backdrop-filter backdrop-blur-[16px] bg-white/90 dark:bg-gray-950/90 border-gray-200 dark:border-gray-900/70">
     <div class="container flex mx-auto flex-row items-center px-2">
       <!-- Head 1/3 -->
       <ClientOnly>
         <div class="flex flex-1 space-x-4 flex-row items-center justify-start">
-          <NuxtLink to="/profile">
+          <UTooltip text="העבודה הגדולה האחת">
+            <UButton
+              :icon="'i-heroicons-scale'"
+              to="/"
+              class="mr-2"
+              size="2xl"
+              aria-label="Theme"
+            />
+          </UTooltip>
+          <!-- <NuxtLink to="/profile">
             <UAvatar alt="לקס רקס" size="sm" chip-color="primary" />
-          </NuxtLink>
+          </NuxtLink> -->
         </div>
       </ClientOnly>
       <!-- Head 2/3 -->
       <div class="flex-1 flex flex-row items-center justify-center">
-        <UTooltip text="העבודה הגדולה האחת">
+        <!-- <UTooltip text="העבודה הגדולה האחת">
           <NuxtLink to="/" class="flex items-center justify-center rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-900 w-12 h-12 my-1">
             <UIcon name="i-heroicons-scale" class="text-3xl" />
           </NuxtLink>
-        </UTooltip>
+        </UTooltip> -->
       </div>
       <!-- Head 3/3 -->
       <div class="flex flex-1 flex-row items-center justify-end">
@@ -52,12 +61,12 @@ const handleLogin = async () => {
           <ColorModeButton class="flex"/>
         </UTooltip>
 
-        <UButton
+        <!-- <UButton
         :icon="'i-heroicons-bolt-solid'"
-        to="/profiles"
+        to="/"
         class="mr-2"
         aria-label="Theme"
-        />
+        /> -->
         
         <!-- <div v-if="user">
           <UButton

@@ -1,9 +1,49 @@
 <template>
-  <div class="container mx-auto pt-20">
+  <div class="container min-h-screen mx-auto pt-20">
 
-    <h1 ref="typingTitle" class="font-extrabold text-6xl md:text-8xl lg:text-9xl mt-12"></h1>
-    <div ref="typingBody" class="font-thin text-3xl md:text-4xl lg:text-5xl leading-[2.4rem] md:leading-[3rem] lg:leading-[3.6rem] mt-12 md:mt-16 lg:mt-20 sm:mb-24 md:mb-36 lg:mb-48"></div>
-
+    <h1
+      ref="typingTitle"
+      class="
+        font-extrabold
+        text-6xl
+        md:text-8xl
+        lg:text-9xl
+        mt-12
+      ">
+    </h1>
+    <div
+      ref="typingBody"
+      class="
+        font-thin
+        text-3xl
+        md:text-4xl
+        lg:text-5xl
+        leading-[2.4rem]
+        md:leading-[3rem]
+        lg:leading-[3.6rem]
+        mt-12
+        md:mt-16
+        lg:mt-20
+        sm:mb-24
+        md:mb-36
+        lg:mb-48
+      ">
+    </div>
+   
+    <footer
+      v-if="showPageItems"
+      class="
+        flex
+        justify-center
+        items-center
+        py-6
+        text-sm
+      text-gray-500
+      ">
+   
+      Made with 🧠 from ❤️ for ⚖️ by Lex
+    
+    </footer>
   </div>
 </template>
 
@@ -22,20 +62,25 @@ onMounted(() => {
 const typingTitlec = function typingTitlef() {
 new TypeIt(typingTitle.value, {
   strings: [],
-  speed: 100,
+  speed: 120,
   waitUntilVisible: true,
   afterComplete: function (instance) {
     instance.destroy(),
     typingBodyc()
   }
  })
+ .pause(3333)
+ .type('העבודה </span>')
+ .options({ speed: 80 })
+ .type('האמיתית ')
  .pause(333)
- .type('העבודה החשובה</span>')
- .pause(333)
- .delete(6)
+ .delete(8)
+ .type('החשובה ')
+ .pause(222)
+ .delete(7)
  .pause(140)
  .type('ה')
- .pause(999)
+ .pause(555)
  .type('יחידה')
  .pause(666)
  .delete(7)
@@ -53,26 +98,32 @@ const typingBodyc = function typingBodyf() {
       autoScrolling()
     },
     afterComplete: function (instance) {
-      instance.destroy()
+      instance.destroy(),
+      showPageItemsf()
     }    
   })
-  .pause(1000)
-  .options({ speed: 100 })
-  .type('תודה שהגעתם לאתר קבוצת ')
-  .options({ speed: 40 })
+  .pause(2222)
+  .options({ speed: 30 })
+  .type('תודה שהגעתם לאתר של קבוצת ')
+  .options({ speed: 50 })
   .type('<span class="font-black text-primary-500">העבודה הגדולה האחת</span>. ')
-  .pause(999)
-  .options({ speed: 80 })
+  .pause(777)
+  .options({ speed: 25 })
   .type('פה תוכלו לרכוש ידע על הכוח של עצמכם ואיך להשתמש בו. ')
-  .pause(666)
-  .options({ speed: 60 })
-  .type('מכם זה ידרוש זמן, תשומת לב, וכמובן רצון ללמוד איתנו את גוף הידע הנסתר שאנו לומדים ומקדמים בקבוצה. ')
+  .pause(777)
+  .options({ speed: 40 })
+  .type('מכם זה ידרוש זמן, ')
+  .pause(444)
+  .options({ speed: 30 })
+  .type('תשומת לב, ')
+  .pause(333)
+  .type('וכמובן רצון ללמוד איתנו את גוף הידע הנסתר שאנו לומדים ומקדמים בקבוצה. ')
   .pause(500)
   .type('לעזרכם:')
-  .options({ speed: 120 })
-  .move(-2)
+  .options({ speed: 80 })
+  .move(-3)
   .type('ת')
-  .move(2)
+  .move(3)
   .pause(500)
   .move(-10)
   .pause(200)
@@ -81,6 +132,7 @@ const typingBodyc = function typingBodyf() {
   .move(10)
   .type('<br>')
   .type('<br>')
+  .options({ speed: 50 })
   .type('<span class="font-bold text-4xl md:text-5xl lg:text-6xl">גוף הידע הנסתר:</span>')
   .type('<br>')
   .type('<br>')
@@ -88,7 +140,7 @@ const typingBodyc = function typingBodyf() {
   .type('<br>')
   .type('<a href="https://t.me/therealnaturallaw/58" target="_blank" class="hover:text-primary-500">✅&nbsp; עבודת התזה</a>')
   .type('<br>')
-  .options({ speed: 20 })
+  .options({ speed: 25 })
   .type('<a href="https://t.me/therealnaturallaw/54" target="_blank" class="hover:text-primary-500">✅&nbsp; כל השקופיות</a>')
   .type('<br>')
   .type('<a href="https://t.me/therealnaturallaw/64" target="_blank" class="hover:text-primary-500">✅&nbsp; שאלות עזר</a>') 
@@ -115,7 +167,7 @@ const typingBodyc = function typingBodyf() {
   .type('<br>')
   .type('<a href="https://t.me/therealnaturallaw/113" target="_blank" class="hover:text-primary-500">🙅‍♀️&nbsp; מהי הנשיות הבלתי מקודשת?</a>') 
   .type('<br>')
-  .type('<a href="https://t.me/therealnaturallaw/143" target="_blank" class="hover:text-primary-500">🙅‍♂️&nbsp; מהו בולשיט העידן החדש ודיכוי הזכריות הקדושה?</a>') 
+  .type('<a href="https://t.me/therealnaturallaw/143" target="_blank" class="hover:text-primary-500">🙅‍♂️&nbsp; מהו בולשיט העידן החדש?</a>') 
   .type('<br>')
   .type('<a href="https://t.me/therealnaturallaw/144" target="_blank" class="hover:text-primary-500">☠️&nbsp; מהם שבעת החטאים האמיתיים?</a>') 
   .type('<br>')
@@ -130,6 +182,12 @@ const typingBodyc = function typingBodyf() {
 
 function autoScrolling() {
   window.scrollTo(0,document.body.scrollHeight);
+}
+
+let showPageItems = ref(false)
+
+function showPageItemsf(showPageItems) {
+ showPageItems = true
 }
 
 
