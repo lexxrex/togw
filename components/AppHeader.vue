@@ -45,13 +45,6 @@ const handleLogin = async () => {
             <UIcon name="i-heroicons-scale" class="text-3xl" />
           </NuxtLink>
         </UTooltip>
-        <!-- <UButton
-          :icon="'i-heroicons-scale'"
-          to="/"
-          variant="shadow"
-          size="3xl"
-          aria-label="Theme"
-        /> -->
       </div>
       <!-- Head 3/3 -->
       <div class="flex flex-1 flex-row items-center justify-end">

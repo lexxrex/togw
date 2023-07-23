@@ -1,22 +1,13 @@
 <template>
   <div class="container mx-auto pt-20">
-    <!-- <h1 class="flex flex-row font-extrabold text-8xl mt-12"> -->
-      <!-- העבודה הגדולה האחת -->
-      <!-- <span class="text-[12rem]">העבודה</span>
-      <span class="text-[32rem]">הגדולה</span>
-      <span class="text-[16rem]">האחת</span>  -->
-    <!-- </h1> -->
 
-    <UButton label="המשך" @click="typeIt()"/>
-    <div ref="typingHead" class="font-extrabold text-8xl mt-12"></div>
-    <div ref="typing" class="text-4xl mt-24"></div>
+    <div ref="typingHead" class="font-extrabold text-6xl md:text-8xl lg:text-9xl mt-12"></div>
+    <div ref="typing" class="font-thin text-3xl md:text-4xl lg:text-5xl leading-[2.4rem] md:leading-[3rem] lg:leading-[3.6rem] mt-12 md:mt-16 lg:mt-20"></div>
 
-</div>
-
+  </div>
 </template>
 
 <script setup lang="ts">
-
 import TypeIt from 'typeit'
 
 const typing = ref([])
@@ -26,56 +17,43 @@ onMounted(() => {
 
   new TypeIt(typingHead.value, {
     strings: [],
-    speed: 100,
+    speed: 70,
     waitUntilVisible: true,
     // cursorChar: '&#9878',
     // cursor: {
     //   autoPause: true
     // },
     afterComplete: function (instance) {
-      instance.destroy()
+      instance.destroy(),
+      typeItFunc()
         },
     // afterComplete: () => typeIt()
   })
   .pause(333)
-  .type('<span class="text-8xl font-black">העבודה החשובה ה</span>')
+  .type('העבודה החשובה</span>')
   .pause(333)
-  .delete(9)
-  .type(' הכי')
-  .pause(444)
-  .delete(3)
-  .type('ההכי חשובה')
-  .pause(2222)
-  .delete(10)
+  .delete(6)
+  .pause(140)
   .type('ה')
   .pause(999)
   .type('יחידה')
   .pause(666)
   .delete(7)
-  .type(' הגדולה')
-  .pause(1222)
-  .type(' ה')
-  .pause(11)
-  .type('א')
-  .pause(222)
-  .type('ח')
-  .pause(66)
-  .type('ת')
-  .pause(22)
+  .type(' הגדולה האחת')
   .type('</span>')
   .go()
 
 })
 
-function typeIt() {
+const typeItFunc = function typeIt() {
   new TypeIt(typing.value, {
     strings: [],
-    speed: 30,
+    speed: 60,
     waitUntilVisible: true,
     // cursorChar: '&#9878'
   })
   .pause(1000)
-  .options({ speed: 80 })
+  .options({ speed: 40 })
   .type('תודה שהצטרפתם לקבוצת <span class="font-black text-primary-500">העבודה הגדולה האחת</span>. פה תוכלו לרכוש ידע על הכוח של עצמכם ואיך להשתמש בו. מכם זה ידרוש זמן, תשומת לב, וכמובן רצון ללמוד איתנו את גוף הידע הנסתר שאנו לומדים ומקדמים בקבוצה. לעזרכם:')
   .pause(500)
   .move(-2)
@@ -84,15 +62,6 @@ function typeIt() {
   .go()
 }
 
-
-
-// const client = useSupabaseClient()
-// const baseUrl = 'https://umjsqfwlhbsyfaqlyanw.supabase.co/storage/v1/object/sign/avatars/'
-
-// const { data: profiles } = await useAsyncData('profiles', async () => {
-//   const { data } = await client.from('profiles').select('*')
-//   return data
-// })
 
 </script>
 
