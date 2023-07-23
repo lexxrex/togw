@@ -15,5 +15,8 @@
     "@nuxtjs/supabase": "^0.3.8",
     "@types/node": "^18.16.19",
     "nuxt": "^3.6.2"
+  },
+  "dependencies": {
+    "typeit": "^8.7.1"
   }
 }
