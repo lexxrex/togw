@@ -35,10 +35,10 @@ const handleLogin = async () => {
         <div class="flex flex-1 space-x-4 flex-row items-center justify-start">
           <UTooltip text="העבודה הגדולה האחת">
             <UButton
-              :icon="'i-heroicons-scale'"
+              :icon="'i-heroicons-scale-solid'"
               to="/"
               class="mr-2"
-              size="2xl"
+              size="3xl"
               aria-label="Theme"
             />
           </UTooltip>
@@ -57,6 +57,16 @@ const handleLogin = async () => {
       </div>
       <!-- Head 3/3 -->
       <div class="flex flex-1 flex-row items-center justify-end">
+        <UTooltip text="מדיה לשיתופים">
+          <UButton
+            :icon="'i-heroicons-camera-solid'"
+            to="/media"
+            class="mr-2"
+            size="xl"
+            aria-label="Theme"
+          />
+        </UTooltip>
+
         <UTooltip text="מצב צבע">
           <ColorModeButton class="flex"/>
         </UTooltip>

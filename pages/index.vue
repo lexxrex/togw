@@ -1,13 +1,13 @@
 <template>
-  <div class="container min-h-screen mx-auto pt-20">
-
+  <div class="container min-h-screen mx-auto pt-20 px-2">
     <h1
       ref="typingTitle"
       class="
-        font-extrabold
+        font-black
         text-6xl
         md:text-8xl
         lg:text-9xl
+        tracking-[-0.0125em]
         mt-12
       ">
     </h1>
@@ -20,7 +20,7 @@
         lg:text-5xl
         leading-[2.4rem]
         md:leading-[3rem]
-        lg:leading-[3.6rem]
+        lg:leading-[4rem]
         mt-12
         md:mt-16
         lg:mt-20
@@ -31,17 +31,19 @@
     </div>
    
     <footer
-      v-if="showPageItems"
+      v-show="showPageItems"
       class="
         flex
         justify-center
         items-center
         py-6
+        font-thin
         text-sm
-      text-gray-500
       ">
    
-      Made with 🧠 from ❤️ for ⚖️ by Lex
+      <!-- Made with 🧠 from ❤️ for ⚖️ by Lex -->
+      Made with ❤️ by Lex
+      <!-- נוצר מ- ❤️ ע"י לקס -->
     
     </footer>
   </div>
@@ -59,6 +61,24 @@ onMounted(() => {
 
 })
 
+// ---------------------------------------------------
+// Auto scroll
+function autoScrolling() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+// ---------------------------------------------------
+// Show page items
+var showPageItems = ref(false)
+
+function showPageItemsc() {
+  showPageItems.value = true
+  // showPageItems = !showPageItems
+  // showPageItems ? false : true
+}
+
+// ---------------------------------------------------
+// Typing: Title
 const typingTitlec = function typingTitlef() {
 new TypeIt(typingTitle.value, {
   strings: [],
@@ -89,6 +109,8 @@ new TypeIt(typingTitle.value, {
  .go()
 }
 
+// ---------------------------------------------------
+// Typing: Body
 const typingBodyc = function typingBodyf() {
   new TypeIt(typingBody.value, {
     strings: [],
@@ -99,7 +121,8 @@ const typingBodyc = function typingBodyf() {
     },
     afterComplete: function (instance) {
       instance.destroy(),
-      showPageItemsf()
+      showPageItemsc(),
+      console.log('Hello')
     }    
   })
   .pause(2222)
@@ -177,19 +200,10 @@ const typingBodyc = function typingBodyf() {
   .type('<br>')
   .type('<a href="https://t.me/therealnaturallaw/127" target="_blank" class="hover:text-primary-500">🕊&nbsp; מהו הפתרון היחיד לשיעבוד?</a>') 
   .type('<br>')
+  .type('<br>')
+  .type('<span class="font-bold text-4xl md:text-5xl lg:text-6xl">למידה פוריה !</span>')
   .go()
 }
-
-function autoScrolling() {
-  window.scrollTo(0,document.body.scrollHeight);
-}
-
-let showPageItems = ref(false)
-
-function showPageItemsf(showPageItems) {
- showPageItems = true
-}
-
 
 </script>
 
