@@ -1,13 +1,14 @@
 <template>
-  <AppContainer>
+  <AppContainer class="">
     <AppHeader />
-    <PageContainer>
-      <NuxtLoadingIndicator
-        color="#47ffd4"
-        height="3"
-      />
-      <NuxtPage />
-    </PageContainer>
+      <PageContainer class="">
+        <NuxtLoadingIndicator
+          color="#47ffd4"
+          height="3"
+        />
+        <NuxtPage />
+      </PageContainer>
+    <AppFooter />
   </AppContainer>
 </template>
 

@@ -37,7 +37,7 @@ const handleLogin = async () => {
             <UButton
               :icon="'i-heroicons-scale-solid'"
               to="/"
-              class="mr-2"
+              class=""
               size="3xl"
               aria-label="Theme"
             />
@@ -61,7 +61,7 @@ const handleLogin = async () => {
           <UButton
             :icon="'i-heroicons-camera-solid'"
             to="/media"
-            class="mr-2"
+            class="mx-2"
             size="xl"
             aria-label="Theme"
           />
@@ -71,12 +71,13 @@ const handleLogin = async () => {
           <ColorModeButton class="flex"/>
         </UTooltip>
 
-        <!-- <UButton
-        :icon="'i-heroicons-bolt-solid'"
-        to="/"
-        class="mr-2"
-        aria-label="Theme"
-        /> -->
+        <UButton
+          :icon="'i-heroicons-bolt-solid'"
+          to="/"
+          size="xl"
+          class="mr-2"
+          aria-label="Theme"
+        />
         
         <!-- <div v-if="user">
           <UButton

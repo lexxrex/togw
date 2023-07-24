@@ -29,23 +29,6 @@
         lg:mb-48
       ">
     </div>
-   
-    <footer
-      v-show="showPageItems"
-      class="
-        flex
-        justify-center
-        items-center
-        py-6
-        font-thin
-        text-sm
-      ">
-   
-      <!-- Made with 🧠 from ❤️ for ⚖️ by Lex -->
-      Made with ❤️ by Lex
-      <!-- נוצר מ- ❤️ ע"י לקס -->
-    
-    </footer>
   </div>
 </template>
 
@@ -64,7 +47,7 @@ onMounted(() => {
 // ---------------------------------------------------
 // Auto scroll
 function autoScrolling() {
-  window.scrollTo(0,document.body.scrollHeight);
+  window.scrollTo(0,document.body.scrollHeight)
 }
 
 // ---------------------------------------------------
@@ -119,10 +102,11 @@ const typingBodyc = function typingBodyf() {
     afterStep: () => {
       autoScrolling()
     },
-    afterComplete: function (instance) {
+    afterComplete: (instance) => {
       instance.destroy(),
       showPageItemsc(),
-      console.log('Hello')
+      autoScrolling()
+      // setTimeout(autoScrolling(), 500)
     }    
   })
   .pause(2222)
