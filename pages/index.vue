@@ -1,5 +1,5 @@
 <template>
-  <div class="container min-h-screen mx-auto pt-20 px-2">
+  <div id="hero" class="container min-h-screen mx-auto pt-20 px-2">
     <h1
       ref="typingTitle"
       class="
@@ -13,6 +13,7 @@
     </h1>
     <div
       ref="typingBody"
+      :class="isDoneTyping ? 'mb-4' : 'mb-24 md:mb-36 lg:mb-48'"
       class="
         font-thin
         text-3xl
@@ -24,10 +25,9 @@
         mt-12
         md:mt-16
         lg:mt-20
-        sm:mb-4
       ">
     </div>
-    <div id="media" v-show="showPageItems" class="
+    <div id="media" v-show="isDoneTyping" class="
       grid
       grid-cols-1
       sm:grid-cols-2
@@ -75,49 +75,101 @@
       <a href="/img/media/togw-truth-first-love-second.jpg" target="_blank"><img src="/img/media/togw-truth-first-love-second.jpg" class="p-1 hover:bg-black dark:hover:bg-white rounded-md" alt="media" loading="lazy" /></a>
       <a href="/img/media/togw-turn-truth-religion.jpg" target="_blank"><img src="/img/media/togw-turn-truth-religion.jpg" class="p-1 hover:bg-black dark:hover:bg-white rounded-md" alt="media" loading="lazy" /></a>
     </div>
+    <footer v-if="isDoneTyping" class="flex mx-auto flex-col justify-start px-2 mt-48 border-t border-gray-200 dark:border-gray-900">
+      <div class="flex flex-col justify-start">
+
+        <!-- BRANDIG -->
+        <NuxtLink to="#hero" class="flex flex-1 flex-col justify-center mx-auto">
+          <div class="mx-auto -mt-20 w-36 h-36 lg:w-36 lg:h-36 bg-[url('/img/togw-logomark-app-black-on-white.jpg')] dark:bg-[url('/img/togw-logomark-app-white-on-zinc.jpg')] bg-contain" />
+          <h2 class="mt-4 font-black text-3xl">העבודה הגדולה האחת</h2>
+        </NuxtLink>
+
+        <!-- TELEGRAM -->
+        <UButton to="https://t.me/theonegreatwork" target="_blank" label="בטלגרם" color="primary" variant="solid" size="md" class="mx-auto mt-3 mb-6 hover:scale-[1.1] hover:rotate-[6deg]"/>
+        
+        <!-- QUOTE -->
+        <p class="mx-auto mt-4 mb-2 font-thin text-sm text-center tracking-wider text-gray-500">הכל זה אהבה, פחד הוא אשליה, כל היצורים חופשיים והאמת לעולם לא ניתנת להכחדה</p>
+        <!-- LOVELEX -->
+        <NuxtLink to="https://t.me/lexxrex" target="_blank" class="mx-auto mt-0 mb-4 font-thin text-xs">
+            <!-- Made with 🧠 from ❤️ for ⚖️ by Lex -->
+            Made with ❤️ by Lex
+            <!-- נוצר מ- ❤️ ע"י לקס -->
+        </NuxtLink>
+
+        <!-- <div class="flex justify-start">
+
+          <div class="flex-1">
+            <p class="mb-4">שלום אחד וכולם,</p>
+            <p class="mb-4">גוף הידע המשותף פה מהווה את המפתח הראשי לכל המנעולים על כל הדלתות של כל הכלובים התודעתיים בהם רובנו עדיין נמצאים ואפילו לא מודעים. כל מי שיבחר 
+              <NuxtLink to="https://youtu.be/_GzPYIt7lHM" target="_blank">ללמוד</NuxtLink>
+              ולהשתמש בו, יוכל להשתחרר ולעזור לשחרר את התודעה של כל אחד ואחת מאיתנו ממערכות השליטה המחשבתית והתודעתית אליהן נחשפנו מלידה. וכקולקטיב, להיות חלק מהפתרון שיוביל לשינוי במצב הפיזי הקיים בחברה - מעבדות לחירות.
+            </p>
+            <p>היציאה מעבדות לחירות יכולה להתממש ולהתקיים רק ע״י למידה, הבנה ועשייה של 
+              <NuxtLink to="https://t.me/therealnaturallaw/69" target="_blank">העבודה הגדולה האחת</NuxtLink>.
+              העבודה הגדולה האחת מתחילה בלמידה יסודית ועצמאית של החוק הטבעי האמיתי. וממשיכה בלעזור ולהעניק ידע שמשחרר את התודעה ממקום של אחריות מוסרית ואהבה לאחר. אלו גם המניעים להקמת ערוץ החוק הטבעי האמיתי והבסיס שמחבר בין חברי הקבוצה של העבודה הגדולה האחת.
+            </p>
+          </div>
+
+          <div class="flex-1">
+            2
+          </div>
+
+        </div> -->
+
+      </div>
+    </footer>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="js">
 import TypeIt from 'typeit'
 
 const typingBody = ref([])
 const typingTitle = ref([])
 
 onMounted(() => {
-  typingTitlec()
-  // typingBodyc()
+  isTypingTitle()
+  // isTypingBody()
 
 })
 
 // ---------------------------------------------------
-// Auto scroll
-function autoScrolling() {
-  window.scrollTo(300,document.body.scrollHeight)
+// SCROLL TO BOTTOM
+function initAutoScrollToBottom() {
+  window.scrollTo(0,document.body.scrollHeight)
 }
 
 // ---------------------------------------------------
-// Show page items
-var showPageItems = ref(false)
+// SHOW PAGE ITEMS
+// var showPageItems = ref(false)
 
-function showPageItemsc() {
-  showPageItems.value = true
-  // showPageItems = !showPageItems
-  // showPageItems ? false : true
+// function initShowPageItems() {
+//   showPageItems.value = true
+// }
+
+// ---------------------------------------------------
+// EMIT: Typing has completed
+const emit = defineEmits(['doneTyping'])
+const isDoneTyping = ref(false)
+
+
+const emitDoneTyping = () => {
+  emit('doneTyping', isDoneTyping.value = true)
+  // emit('doneTyping', event.target.value)
 }
 
 // ---------------------------------------------------
-// Typing: Title
-const typingTitlec = function typingTitlef() {
-new TypeIt(typingTitle.value, {
-  strings: [],
-  speed: 120,
-  waitUntilVisible: true,
-  afterComplete: function (instance) {
-    instance.destroy(),
-    typingBodyc()
-  }
- })
+// TYPING: Title
+const isTypingTitle = function initTypingTitle() {
+  new TypeIt(typingTitle.value, {
+    strings: [],
+    speed: 120,
+    waitUntilVisible: true,
+    afterComplete: function (instance) {
+      instance.destroy(),
+      isTypingBody()
+    }
+  })
  .pause(3333)
  .type('העבודה </span>')
  .options({ speed: 80 })
@@ -139,20 +191,21 @@ new TypeIt(typingTitle.value, {
 }
 
 // ---------------------------------------------------
-// Typing: Body
-const typingBodyc = function typingBodyf() {
+// TYPING: Body
+const isTypingBody = function initTypingBody() {
   new TypeIt(typingBody.value, {
     strings: [],
     speed: 60,
     waitUntilVisible: true,
     afterStep: () => {
-      autoScrolling()
+      initAutoScrollToBottom()
     },
     afterComplete: (instance) => {
       instance.destroy(),
-      showPageItemsc(),
-      autoScrolling()
-      // setTimeout(autoScrolling(), 500)
+      // initShowPageItems(),
+      initAutoScrollToBottom(),
+      emitDoneTyping()
+      // setTimeout(initAutoScrollToBottom(), 500)
     }    
   })
   .pause(2222)
@@ -237,10 +290,10 @@ const typingBodyc = function typingBodyf() {
   .type('⚖️ 🕊 ❤️')
   .type('<br>')
   .type('<br>')
-  .type('והנה מספר קבצי מדיה שיתנו לכם השראה ויעזרו לכם לחדד את המסר כשאתם משתפים עם משפחה וחברים... אז נא להעתיק להדביק ולשתף.')
+  .type('והנה מספר <a href="#media" alt="Media" class="font-semibold text-primary-500">קבצי מדיה</a> שיתנו לכם השראה ויעזרו לכם לחדד את המסר כשאתם משתפים עם משפחה וחברים...')
   .type('<br>')
   .type('<br>')
-  .type('🙏')
+  .type('🙏 👇')
   .go()
 }
 

@@ -8,7 +8,7 @@
         />
         <NuxtPage />
       </PageContainer>
-    <AppFooter />
+    <!-- <AppFooter /> -->
   </AppContainer>
 </template>
 

@@ -36,7 +36,7 @@ const handleLogin = async () => {
           <UTooltip text="העבודה הגדולה האחת">
             <UButton
               :icon="'i-heroicons-scale-solid'"
-              to="/"
+              to="/#hero"
               class=""
               size="3xl"
               aria-label="Theme"
@@ -69,7 +69,7 @@ const handleLogin = async () => {
 
         <UButton
           :icon="'i-heroicons-bolt-solid'"
-          to="/"
+          to="/#hero"
           size="xl"
           class="ms-1 me-1"
           aria-label="Theme"
