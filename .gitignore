@@ -4,6 +4,7 @@
 .nitro
 .cache
 dist
+.deploy
 
 # Node dependencies
 node_modules
