@@ -1,29 +1,29 @@
 <script setup lang="ts">
-const appConfig = useAppConfig()
-const client = useSupabaseAuthClient()
-const user = useSupabaseUser()
-const supabase = useSupabaseClient()
-const loading = ref(false)
-const email = ref('')
-const isOpen = ref(false)
+// const appConfig = useAppConfig()
+// const client = useSupabaseAuthClient()
+// const user = useSupabaseUser()
+// const supabase = useSupabaseClient()
+// const loading = ref(false)
+// const email = ref('')
+// const isOpen = ref(false)
 
-const logout = async () => {
-  await client.auth.signOut()
-  navigateTo('/')
-}
+// const logout = async () => {
+//   await client.auth.signOut()
+//   navigateTo('/')
+// }
 
-const handleLogin = async () => {
-  try {
-    loading.value = true
-    const { error } = await supabase.auth.signInWithOtp({ email: email.value })
-    if (error) { throw error }
-    alert('Check your email for the login link!')
-  } catch (error) {
-    alert(error)
-  } finally {
-    loading.value = false
-  }
-}
+// const handleLogin = async () => {
+//   try {
+//     loading.value = true
+//     const { error } = await supabase.auth.signInWithOtp({ email: email.value })
+//     if (error) { throw error }
+//     alert('Check your email for the login link!')
+//   } catch (error) {
+//     alert(error)
+//   } finally {
+//     loading.value = false
+//   }
+// }
 
 </script>
 
@@ -117,7 +117,7 @@ const handleLogin = async () => {
             </form>
           </UModal>
         </div> -->
-        <div v-if="!user">
+        <!-- <div v-if="!user">
           <UButton
             label="כניסה"
             class="mx-2 font-thin"
@@ -163,7 +163,7 @@ const handleLogin = async () => {
               </UContainer>
             </form>
           </UModal>
-        </div>
+        </div> -->
       </div>
     </div>
   </header>
