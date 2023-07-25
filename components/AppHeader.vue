@@ -60,24 +60,24 @@ const handleLogin = async () => {
         <UTooltip text="מדיה לשיתופים">
           <UButton
             :icon="'i-heroicons-camera-solid'"
-            to="/media"
-            class="mx-2"
+            to="/#media"
+            class="me-1"
             size="xl"
             aria-label="Theme"
           />
-        </UTooltip>
-
-        <UTooltip text="מצב צבע">
-          <ColorModeButton class="flex"/>
         </UTooltip>
 
         <UButton
           :icon="'i-heroicons-bolt-solid'"
           to="/"
           size="xl"
-          class="mr-2"
+          class="ms-1 me-1"
           aria-label="Theme"
         />
+
+        <UTooltip text="מצב צבע" class="ms-1">
+          <ColorModeButton/>
+        </UTooltip>
         
         <!-- <div v-if="user">
           <UButton
