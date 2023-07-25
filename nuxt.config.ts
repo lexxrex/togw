@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    // baseURL: '/togw/',
+    baseURL: '/togw/',
     head: {
         htmlAttrs: { dir: 'rtl', lang: 'he' },
     },
@@ -9,9 +9,9 @@ export default defineNuxtConfig({
   // devtools: { enabled: true },
   ssr: false,
   target: 'static',
-  router: {
-    base: '/togw/',
- },
+//   router: {
+//     base: '/togw/',
+//  },
   modules: [
     '@nuxtjs/supabase',
     '@nuxthq/ui',
