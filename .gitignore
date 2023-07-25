@@ -94,3 +94,6 @@ Temporary Items
 .netlify
 
 fixtures-temp
+
+# Internal
+.deploy
