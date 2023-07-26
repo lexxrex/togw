@@ -28,7 +28,7 @@ const isOpen = ref(false)
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 right-0 py-2 z-10 backdrop-filter backdrop-blur-[16px] bg-white/90 dark:bg-gray-950/90 border-gray-200 dark:border-gray-900/70">
+  <header class="fixed top-0 left-0 right-0 py-2 z-10 backdrop-filter backdrop-blur-[16px] bg-white/80 dark:bg-gray-950/80 border-gray-200 dark:border-gray-900/70">
     <div class="container flex mx-auto flex-row items-center px-2">
       <!-- Head 1/3 -->
       <ClientOnly>
