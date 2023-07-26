@@ -1,6 +1,5 @@
 <template>
   <div id="hero" class="container min-h-screen mx-auto pt-20 px-2">
-    <NuxtLink to="/">HELLO</NuxtLink>
     <h1
       ref="typingTitle"
       class="
