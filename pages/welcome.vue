@@ -20,15 +20,15 @@
         mt-12
         mb-20 md:mb-24 lg:mb-32
       ">
-        העבודה הגדולה האחת
+      {{ name }}
       </h1>
 
-      <p class="mb-20"> תודה שהגעתם לאתר של קבוצת   
+      <p class="mb-20"> תודה שהגעת לאתר של קבוצת   
       <a href="https://t.me/theonegreatwork" target="_blank" class="font-black text-primary-500">העבודה הגדולה האחת</a>.
-      פה תוכלו לרכוש ידע על הכוח של עצמכם ואיך להשתמש בו. מכם זה ידרוש זמן, תשומת לב, וכמובן רצון ללמוד איתנו את גוף הידע הנסתר שאנו לומדים ומקדמים בקבוצה ובאתר. לעזרכתם:
+      פה ניתן לרכוש ידע על הכוח של עצמך ואיך להשתמש בו. ממך זה ידרוש זמן, תשומת לב, וכמובן רצון ללמוד איתנו את גוף הידע הנסתר שאנו לומדים ומקדמים בקבוצה ובאתר. לעזרתך -
       </p>
       
-      <p class="mb-12 font-bold text-4xl md:text-5xl lg:text-6xl">גוף הידע הנסתר:</p>
+      <p class="mb-12 font-bold text-4xl md:text-5xl lg:text-6xl">גוף הידע הנסתר</p>
 
       <ul class="mb-20">
         <li><a href="https://t.me/therealnaturallaw/4" target="_blank" class="hover:text-primary-500">✅&nbsp; סמינר החוק הטבעי האמיתי</a></li> 
@@ -37,7 +37,7 @@
         <li><a href="https://t.me/therealnaturallaw/54" target="_blank" class="hover:text-primary-500">✅&nbsp; כל השקופיות</a></li>
         <li><a href="https://t.me/therealnaturallaw/64" target="_blank" class="hover:text-primary-500">✅&nbsp; שאלות עזר</a></li> 
       </ul>
-      <p class="mb-12 font-bold text-4xl md:text-5xl lg:text-6xl">ידע נלווה לחוק הטבעי האמיתי:</p>
+      <p class="mb-12 font-bold text-4xl md:text-5xl lg:text-6xl">ידע נלווה לחוק הטבעי האמיתי</p>
       <ul class="mb-20">
         <li><a href="https://t.me/therealnaturallaw/1224" target="_blank" class="hover:text-primary-500">⚖️&nbsp; מהי האמת?</a></li> 
         <li><a href="https://t.me/therealnaturallaw/69" target="_blank" class="hover:text-primary-500">👑&nbsp; מהי העבודה הגדולה האחת?</a></li> 
@@ -62,7 +62,7 @@
       <p class="mb-12">
         והנה מספר 
         <a href="#media" alt="Media" class="font-semibold text-primary-500">קבצי מדיה</a>
-        שיתנו לכם השראה ויעזרו לכם לחדד את המסר כשאתם משתפים עם משפחה וחברים.
+        שיתנו לך השראה וגם יעזרו להעביר את המסר כשמשתפים עם משפחה וחברים...
       </p>
 
       <p class="mb-20">🙏 👇</p>
@@ -91,31 +91,21 @@
             <!-- נוצר מ- ❤️ ע"י לקס -->
         </NuxtLink>
 
-        <!-- <div class="flex justify-start">
-
-          <div class="flex-1">
-            <p class="mb-4">שלום אחד וכולם,</p>
-            <p class="mb-4">גוף הידע המשותף פה מהווה את המפתח הראשי לכל המנעולים על כל הדלתות של כל הכלובים התודעתיים בהם רובנו עדיין נמצאים ואפילו לא מודעים. כל מי שיבחר 
-              <NuxtLink to="https://youtu.be/_GzPYIt7lHM" target="_blank">ללמוד</NuxtLink>
-              ולהשתמש בו, יוכל להשתחרר ולעזור לשחרר את התודעה של כל אחד ואחת מאיתנו ממערכות השליטה המחשבתית והתודעתית אליהן נחשפנו מלידה. וכקולקטיב, להיות חלק מהפתרון שיוביל לשינוי במצב הפיזי הקיים בחברה - מעבדות לחירות.
-            </p>
-            <p>היציאה מעבדות לחירות יכולה להתממש ולהתקיים רק ע״י למידה, הבנה ועשייה של 
-              <NuxtLink to="https://t.me/therealnaturallaw/69" target="_blank">העבודה הגדולה האחת</NuxtLink>.
-              העבודה הגדולה האחת מתחילה בלמידה יסודית ועצמאית של החוק הטבעי האמיתי. וממשיכה בלעזור ולהעניק ידע שמשחרר את התודעה ממקום של אחריות מוסרית ואהבה לאחר. אלו גם המניעים להקמת ערוץ החוק הטבעי האמיתי והבסיס שמחבר בין חברי הקבוצה של העבודה הגדולה האחת.
-            </p>
-          </div>
-
-          <div class="flex-1">
-            2
-          </div>
-
-        </div> -->
-
       </div>
     </footer>
   </div>
 </template>
 
 <script setup lang="js">
+const route = useRoute()
+const name = ref('')
+
+onMounted(() => {
+title(name)
+})
+
+function title() {
+  route.query.name? name.value = 'שלום ' + route.query.name + ',' : name.value = 'העבודה הגדולה האחת'
+}
 
 </script>

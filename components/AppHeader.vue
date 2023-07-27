@@ -6,6 +6,7 @@
 // const loading = ref(false)
 // const email = ref('')
 const isOpen = ref(false)
+const appConfig = useAppConfig()
 
 // const logout = async () => {
 //   await client.auth.signOut()
@@ -47,12 +48,12 @@ const isOpen = ref(false)
                 <UContainer class="pt-8">
                   <div class="mx-auto w-36 h-36 md:w-42 md:h-42 lg:w-40 lg:h-40 bg-[url('/img/togw-logomark-app-black-on-white.jpg')] dark:bg-[url('/img/togw-logomark-app-white-on-zinc.jpg')] bg-contain" />
 
-                  <UBadge label="0.1.2" color="red" size="xs" class="absolute top-4 end-4" />
+                  <UBadge :label="appConfig.version" color="red" size="xs" class="absolute top-4 end-4" />
 
                   <h1 class="text-center text-3xl font-black text-zinc-900 dark:text-zinc-200 pt-4">
                     העבודה הגדולה האחת
                   </h1>
-                  <span class="text-xs text-center text-gray-400 dark:text-gray-700 block mt-2">
+                  <span class="text-sm text-center text-gray-600 dark:text-gray-300 tracking-wide block mt-2">
                     האתר הרשמי של קבוצת העבודה הגדולה
                   </span>
                   
@@ -131,7 +132,7 @@ const isOpen = ref(false)
         <UTooltip text="ללמוד">
           <UButton
             :icon="'i-heroicons-bolt-solid'"
-            to="/static#hero"
+            to="/welcome#hero"
             size="xl"
             class="ms-1 me-1"
             aria-label="Theme"
@@ -140,7 +141,7 @@ const isOpen = ref(false)
         <UTooltip text="לשתף">
           <UButton
             :icon="'i-heroicons-camera-solid'"
-            to="/static#media"
+            to="/welcome#media"
             class="me-1"
             size="xl"
             aria-label="Theme"

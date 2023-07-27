@@ -51,6 +51,6 @@ html {
   @apply scroll-smooth;
 }
 body {
-  @apply bg-white dark:bg-zinc-950;
+  @apply bg-white dark:bg-zinc-950 selection:text-black selection:bg-primary-500;
 }
 </style>
