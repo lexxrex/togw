@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "gh-pages -d dist"
+    "deploy": "bash .deploy"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -15,7 +15,6 @@
     "@nuxtjs/google-fonts": "^3.0.1",
     "@nuxtjs/supabase": "^0.3.8",
     "@types/node": "^18.16.19",
-    "gh-pages": "^5.0.0",
     "nuxt": "^3.6.2"
   },
   "dependencies": {

@@ -1,62 +1,72 @@
-# Nuxt 3 Minimal Starter
+# The One Great Work
+
+This repository is used to further __The One Great Work__ effort in awakening the masses and saving more lost souls, one soul at a time.
+
+Learn about your true power and how to use it. Join our Telegram group for more information - https://t.me/theonegreatwork
+
+---
+
+## Technical Information
+
+### Nuxt 3 Development
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+#### Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
+### npm
 npm install
 
-# pnpm
+### pnpm
 pnpm install
 
-# yarn
+### yarn
 yarn install
 ```
 
-## Development Server
+#### Development Server
 
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
+### npm
 npm run dev
 
-# pnpm
+### pnpm
 pnpm run dev
 
-# yarn
+### yarn
 yarn dev
 ```
 
-## Production
+#### Production
 
 Build the application for production:
 
 ```bash
-# npm
+### npm
 npm run build
 
-# pnpm
+### pnpm
 pnpm run build
 
-# yarn
+### yarn
 yarn build
 ```
 
 Locally preview production build:
 
 ```bash
-# npm
+### npm
 npm run preview
 
-# pnpm
+### pnpm
 pnpm run preview
 
-# yarn
+### yarn
 yarn preview
 ```
 

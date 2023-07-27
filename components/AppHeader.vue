@@ -47,7 +47,7 @@ const isOpen = ref(false)
                 <UContainer class="pt-8">
                   <div class="mx-auto w-36 h-36 md:w-42 md:h-42 lg:w-40 lg:h-40 bg-[url('/img/togw-logomark-app-black-on-white.jpg')] dark:bg-[url('/img/togw-logomark-app-white-on-zinc.jpg')] bg-contain" />
 
-                  <UBadge label="0.1.1" color="green" size="xs" class="absolute top-4 end-4" />
+                  <UBadge label="0.1.2" color="red" size="xs" class="absolute top-4 end-4" />
 
                   <h1 class="text-center text-3xl font-black text-zinc-900 dark:text-zinc-200 pt-4">
                     העבודה הגדולה האחת
@@ -131,7 +131,7 @@ const isOpen = ref(false)
         <UTooltip text="ללמוד">
           <UButton
             :icon="'i-heroicons-bolt-solid'"
-            to="/#hero"
+            to="/static#hero"
             size="xl"
             class="ms-1 me-1"
             aria-label="Theme"
@@ -140,7 +140,7 @@ const isOpen = ref(false)
         <UTooltip text="לשתף">
           <UButton
             :icon="'i-heroicons-camera-solid'"
-            to="/#media"
+            to="/static#media"
             class="me-1"
             size="xl"
             aria-label="Theme"
